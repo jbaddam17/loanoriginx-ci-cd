@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: loanorginx-argo-application
+  name: los-consumer-service
   namespace: argocd
 spec:
   project: default
 
   source:
     repoURL: https://github.com/jbaddam17/loanoriginx-ci-cd.git
-    path: argocd
+    path: los-consumer-service
     targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: dev-los-consumer-service
 
   syncPolicy:
     syncOptions:

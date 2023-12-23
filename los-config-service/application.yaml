@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: los-config-service
-  namespace: los-config-service
+  namespace: argocd
 spec:
   project: default
 
@@ -15,7 +15,7 @@ spec:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: dev-los-config-service
 
   syncPolicy:
     syncOptions:

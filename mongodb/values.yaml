@@ -13,7 +13,6 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -96,3 +95,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+mongodb:
+  auth:
+    rootUser: "admin"
+    rootPassword: "admin"
+    databases:
+      - applications
+      - application

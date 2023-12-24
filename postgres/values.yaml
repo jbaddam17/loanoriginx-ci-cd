@@ -12,11 +12,6 @@ image:
 
 imagePullSecrets: []
 
-postgresql:
-  postgresqlUsername: admin
-  postgresqlPassword: admin
-  postgresqlDatabase: loan-originx
-
 nameOverride: ""
 fullnameOverride: ""
 
@@ -102,3 +97,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+postgresql:
+  global:
+    postgresql:
+      auth:
+        username: admin
+        password: admin
+        database: loan-orginx
+        postgresPassword: admin

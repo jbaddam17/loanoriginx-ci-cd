@@ -42,10 +42,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
+              host: los-config-service.dev-los-config-service.svc.cluster.local
               path: /actuator/health
               port: 8080
           readinessProbe:
             httpGet:
+              host: los-config-service.dev-los-config-service.svc.cluster.local
               path: /actuator/health
               port: 8080
           resources:

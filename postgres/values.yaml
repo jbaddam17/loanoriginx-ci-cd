@@ -1,16 +1,22 @@
-# Default values for los-config-service.
+# Default values for postgres.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: jaganreddy17/los-config-service
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
 imagePullSecrets: []
+
+postgresql:
+  postgresqlUsername: admin
+  postgresqlPassword: admin
+  postgresqlDatabase: loan-originx
+
 nameOverride: ""
 fullnameOverride: ""
 
@@ -41,7 +47,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 ingress:
   enabled: false
@@ -96,8 +102,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-postgresql:
-  postgresqlUsername: admin
-  postgresqlPassword: admin
-  postgresqlDatabase: loan-originx

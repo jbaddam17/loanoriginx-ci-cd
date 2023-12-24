@@ -103,5 +103,5 @@ postgresql:
       auth:
         username: admin
         password: admin
-        database: loan-orginx
+        database: loan-originx
         postgresPassword: admin

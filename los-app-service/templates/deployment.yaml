@@ -42,12 +42,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /actuator/health
+              port: 8081
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /actuator/health
+              port: 8081
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}

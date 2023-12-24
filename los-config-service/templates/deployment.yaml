@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "los-config-service.fullname" . }}
+  name: {{ $.Release.Name }}
+  namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "los-config-service.labels" . | nindent 4 }}
 spec:

@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: jaganreddy17/los-consumer-service
+  repository: jaganreddy17
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "los-consumer-service"
 
 imagePullSecrets: []
 nameOverride: ""

@@ -68,10 +68,10 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
    limits:
      cpu: 500m
-     memory: 528Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+     memory: 512Mi
+   requests:
+     cpu: 100m
+     memory: 256Mi
 
 autoscaling:
   enabled: false
@@ -98,3 +98,14 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+actuator:
+  health:
+    path: /actuator/health
+
+probes:
+  init:
+    delay: 15
+  exe:
+    interval: 15

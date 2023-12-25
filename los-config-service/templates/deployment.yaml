@@ -42,15 +42,17 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
-            initialDelaySeconds: 500
+            initialDelaySeconds: {{ .Values.probes.init.delay }}
+            periodSeconds: {{ .Values.probes.exe.interval }}
             httpGet:
-              path: /actuator/health
-              port: 8080
+              path: {{ .Values.actuator.health.path }}
+              port: {{ .Values.service.port }}
           readinessProbe:
-            initialDelaySeconds: 500
+            initialDelaySeconds: {{ .Values.probes.init.delay }}
+            periodSeconds: {{ .Values.probes.exe.interval }}
             httpGet:
-              path: /actuator/health
-              port: 8080
+              path: {{ .Values.actuator.health.path }}
+              port: {{ .Values.service.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}

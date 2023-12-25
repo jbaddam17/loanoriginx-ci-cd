@@ -45,15 +45,15 @@ service:
 
 ingress:
   enabled: true
-  className: "nginx-internal"
+  className: "nginx-example"
   annotations:
      kubernetes.io/ingress.class: nginx-internal
      kubernetes.io/tls-acme: "true"
   hosts:
     - host: dev-los-config-service.loanoriginx.net
       paths:
-        - path: /
-          pathType: ImplementationSpecific
+        - path: /lo-config
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

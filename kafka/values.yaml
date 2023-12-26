@@ -102,3 +102,5 @@ kafka:
       users:
         - username: admin
           password: admin
+  zookeeper:
+      enabled: true

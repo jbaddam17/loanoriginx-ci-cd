@@ -46,16 +46,17 @@ service:
   port: 8082
 
 ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  className: example-ingress
+  annotations:
+    #kubernetes.io/ingress.class: nginx-internal
+    #kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
   hosts:
-    - host: chart-example.local
+    - host: dev-los-consumer-service.loanoriginx.net
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

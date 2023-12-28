@@ -8,8 +8,9 @@ image:
   repository: jaganreddy17/los-app-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
+environment: "dev"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

@@ -40,6 +40,9 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+            - name: ENVIRONMENT
+              value: {{ .Values.environment }}
           livenessProbe:
             initialDelaySeconds: {{ .Values.probes.init.delay }}
             periodSeconds: {{ .Values.probes.exe.interval }}

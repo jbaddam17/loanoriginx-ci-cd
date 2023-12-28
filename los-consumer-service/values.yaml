@@ -8,13 +8,13 @@ image:
   repository: jaganreddy17/los-consumer-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
+
+environment: "dev"
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
-environment: "dev"
 
 serviceAccount:
   # Specifies whether a service account should be created

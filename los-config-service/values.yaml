@@ -52,7 +52,7 @@ ingress:
      #kubernetes.io/tls-acme: "true"
      nginx.ingress.kubernetes.io/rewrite-target: /$1
   hosts:
-    - host: dev-los-config-service.loanoriginx.net
+    - host: dev-los-config-service.test
       paths:
         - path: /lo-config
           pathType: Prefix

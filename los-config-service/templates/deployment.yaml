@@ -44,18 +44,18 @@ spec:
           env:
             - name: ENVIRONMENT
               value: {{ .Values.environment }}
-          livenessProbe:
-            initialDelaySeconds: {{ .Values.probes.init.delay }}
-            periodSeconds: {{ .Values.probes.exe.interval }}
-            httpGet:
-              path: {{ .Values.actuator.health.path }}
-              port: {{ .Values.service.port }}
-          readinessProbe:
-            initialDelaySeconds: {{ .Values.probes.init.delay }}
-            periodSeconds: {{ .Values.probes.exe.interval }}
-            httpGet:
-              path: {{ .Values.actuator.health.path }}
-              port: {{ .Values.service.port }}
+{{/*          livenessProbe:*/}}
+{{/*            initialDelaySeconds: {{ .Values.probes.init.delay }}*/}}
+{{/*            periodSeconds: {{ .Values.probes.exe.interval }}*/}}
+{{/*            httpGet:*/}}
+{{/*              path: {{ .Values.actuator.health.path }}*/}}
+{{/*              port: {{ .Values.service.port }}*/}}
+{{/*          readinessProbe:*/}}
+{{/*            initialDelaySeconds: {{ .Values.probes.init.delay }}*/}}
+{{/*            periodSeconds: {{ .Values.probes.exe.interval }}*/}}
+{{/*            httpGet:*/}}
+{{/*              path: {{ .Values.actuator.health.path }}*/}}
+{{/*              port: {{ .Values.service.port }}*/}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
